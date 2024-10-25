@@ -5,6 +5,7 @@ import com.knowhow.repository.SubjectRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubjectService {
@@ -16,6 +17,10 @@ public class SubjectService {
 
     public List<Subject> listarSubjects() {
         return subjectRepository.findAll();
+    }
+    
+    public Optional<Subject> listarSubjectsPorId(Long id) {
+        return subjectRepository.findById(id);
     }
 
     public Subject salvarSubject(Subject subject) {

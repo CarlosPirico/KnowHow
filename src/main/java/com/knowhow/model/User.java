@@ -21,7 +21,6 @@ public class User {
 	    this.name = name;
 	    this.ra = ra;
 		this.password = password;
-	    this.courseId = courseId;
     }
     
 
@@ -31,10 +30,6 @@ public class User {
 
     public String getName() {
         return name;
-    }
-
-    public Integer getCourseId() {
-        return courseId;
     }
     
     public Integer getRa() {

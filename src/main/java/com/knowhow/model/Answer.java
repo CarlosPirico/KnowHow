@@ -13,7 +13,7 @@ public class Answer {
 	//Configurando colunas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer answer_id;
 
     @Column(name = "answer_text", length = 300)
     private String answerText;
@@ -36,7 +36,7 @@ public class Answer {
 
     //Getters e Setters
     public Integer getId() {
-        return id;
+        return answer_id;
     }
 
     public String getAnswerText() {

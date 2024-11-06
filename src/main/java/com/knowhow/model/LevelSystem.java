@@ -10,7 +10,7 @@ public class LevelSystem {
 
 	//Configurando colunas
     @Id
-    private Integer level;
+    private Integer id;
 
     @Column(name = "min_points", nullable = false)
     private Integer minPoints;
@@ -19,18 +19,18 @@ public class LevelSystem {
     public LevelSystem() {}
 
     //Construtor dos atributos da classe
-    public LevelSystem(Integer level, Integer minPoints) {
-        this.level = level;
+    public LevelSystem(Integer id, Integer minPoints) {
+        this.id = id;
         this.minPoints = minPoints;
     }
 
     //Getters e Setters
     public Integer getLevel() {
-        return level;
+        return id;
     }
 
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void getId(Integer id) {
+        this.id = id;
     }
 
     public Integer getMinPoints() {

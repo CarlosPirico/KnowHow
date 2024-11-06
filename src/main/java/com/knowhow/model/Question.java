@@ -19,7 +19,7 @@ public class Question {
     private String questionText;
 
     @Column(nullable = false)
-    private Integer level;
+    private Integer level_id;
 
     @Column(name = "subject_id", nullable = false)
     private int subjectId;
@@ -30,7 +30,7 @@ public class Question {
     // Construtor dos atributos da classe
     public Question(String questionText, Integer level, int subjectId) {
         this.questionText = questionText;
-        this.level = level;
+        this.level_id = level;
         this.subjectId = subjectId;
     }
 
@@ -48,11 +48,7 @@ public class Question {
     }
 
     public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
+        return level_id;
     }
 
     public int getSubjectId() {

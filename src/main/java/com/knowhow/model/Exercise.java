@@ -1,43 +1,42 @@
 package com.knowhow.model;
-//Importações para mapeamento objeto-relacional
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
+
 @Entity
 public class Exercise {
-	
-	//Configurando colunas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer subjectId;
-    
-    @Column(nullable = false, length = 50)
-    private String tip;
-    
+    private Integer id;
+
+    @Column
+    private Subject subject;
+
     @Column(nullable = false, length = 500)
     private String content;
-    
-    @Column(nullable = false, precision = 20, scale = 0)
-    private Double level;
-    
+
+    @Column(nullable = false)
+    private Integer level;
+
     @Column(name = "exercise_description", nullable = false, length = 150)
     private String exerciseDescription;
-    
+
     @Column(nullable = false, length = 200)
     private String solution;
-    
-    @Column(name = "exercise_type", length = 50, columnDefinition = "varchar(50) default 'multiple_choice'")
+
+    @Column(name = "exercise_type", length = 50)
     private String exerciseType;
 
     // Construtor padrão JPA
     public Exercise() {}
 
-    //Construtor dos atributos da classe
-    public Exercise(String tip, String content, Double level, String exerciseDescription, String solution, String exerciseType) {
-        this.tip = tip;
+    // Construtor dos atributos da classe
+    public Exercise(Subject subject, String content, Integer level, String exerciseDescription, String solution, String exerciseType) {
+        this.subject = subject;
         this.content = content;
         this.level = level;
         this.exerciseDescription = exerciseDescription;
@@ -45,17 +44,21 @@ public class Exercise {
         this.exerciseType = exerciseType;
     }
 
-    //Getters e Setters
-    public Integer getSubjectId() {
-        return subjectId;
+    // Getters e Setters
+    public Integer getExerciseId() {
+        return id;
     }
 
-    public String getTip() {
-        return tip;
+    public void setExerciseId(Integer exerciseId) {
+        this.id = exerciseId;
     }
 
-    public void setTip(String tip) {
-        this.tip = tip;
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
     public String getContent() {
@@ -66,11 +69,11 @@ public class Exercise {
         this.content = content;
     }
 
-    public Double getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(Double level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 

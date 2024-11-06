@@ -26,4 +26,8 @@ public class QuestionService {
     public Question salvarQuestion(Question question) {
         return questionRepository.save(question);
     }
+    
+    public Optional<Question> getQuestionPorSubject(int subjectId) {
+        return questionRepository.findById(subjectId);
+    }
 }

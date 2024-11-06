@@ -40,6 +40,10 @@ public class User {
         return password;
     }
     
+    public Integer getCourseId() {
+    	return courseId;
+    }
+    
     public void setPassword(String password) {
     	this.password = password;
     }

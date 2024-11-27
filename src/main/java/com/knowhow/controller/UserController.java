@@ -24,17 +24,17 @@ public class UserController {
 	    }
 
 	    @GetMapping()
-	    public List<User> listarSubjects() {
+	    public List<User> listarUser() {
 	        return userService.listarUser();
 	    }
 	    
 	    @GetMapping(path="/{id}", produces = "application/json")
-	    public Optional<User> listarSubjectsPorId(@PathVariable("id") Long id) {
+	    public Optional<User> listarUserPorId(@PathVariable("id") Long id) {
 	        return userService.listarUserPorId(id);
 	    }
 
 	    @PostMapping()
-	    public User criarSubject(@RequestBody User user) {
+	    public User criarUser(@RequestBody User user) {
 	        return userService.salvarUser(user);
 	    }
 }

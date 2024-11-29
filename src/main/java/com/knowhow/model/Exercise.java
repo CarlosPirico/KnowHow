@@ -1,8 +1,8 @@
 package com.knowhow.model;
 
-public class teteca {
+public class Exercise {
 
-	public teteca() {
+	public Exercise() {
 		// TODO Auto-generated constructor stub
 	}
 
